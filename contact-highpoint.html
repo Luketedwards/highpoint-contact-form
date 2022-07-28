@@ -1,19 +1,27 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <!--  jQuery -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+ <!-- Option 1: Bootstrap Bundle with Popper -->
+ <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+ <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<!-- Bootstrap Date-Picker Plugin -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
-    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-
-<!--  jQuery -->
-<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-
-<!-- Bootstrap Date-Picker Plugin -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+    <link rel="stylesheet" href="static/contact-form.css">
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
     <title>Highpoint Reservation Form</title>
@@ -21,6 +29,7 @@
   <body style="padding-bottom: 60px;">
     <input type="hidden" name="_subject" value="New Reservation!">
     <div class="container mt-5">
+      <img src="static/images/Highpoint logo.jpg" alt="Highpoint Logo">
         <h1 class="text-center">Highpoint Reservation Form</h1>
         <p class="text-center">Please complete the form below.</p>
         <hr>
@@ -34,16 +43,16 @@
           <input type="hidden" name="_next" value="https://luketedwards.github.io/highpoint-contact-form/success.html" >
 
           <div class="col-md-6">
-            <label for="firstName" class="form-label">First Name</label>
+            <label for="firstName" class="form-label">First Name <i class="fa-solid fa-asterisk"></i></label>
             <input type="text" class="form-control" name="First Name" id="firstName" required>
           </div>
           <div class="col-md-6">
-            <label for="lastName" class="form-label">Last Name</label>
+            <label for="lastName" class="form-label">Last Name <i class="fa-solid fa-asterisk"></i></label>
             <input type="text" class="form-control" name="Last&nbsp;Name" id="lastName" required>
           </div>
           <hr>
           <div class="col-md-12 ">
-            <label for="lastName" class="form-label"><strong>Address</strong></label>
+            <label for="lastName" class="form-label"><strong>Address <i class="fa-solid fa-asterisk"></i></strong></label>
             <input type="text" class="form-control" name="Address" id="address" required>
           </div>
           <div class="col-md-6">
@@ -59,34 +68,48 @@
             <input type="text" class="form-control" name="County" id="county" >
           </div>
           <div class="col-md-6">
-            <label for="lastName" class="form-label">Post Code</label>
+            <label for="lastName" class="form-label">Post Code <i class="fa-solid fa-asterisk"></i></label>
             <input type="text" class="form-control" name="Postcode" id="postcode" required>
           </div>
           <div class="col-md-6">
-            <label for="emailInfo" class="form-label">E-mail</label>
+            <label for="emailInfo" class="form-label">E-mail <i class="fa-solid fa-asterisk"></i></label>
             <input type="email" class="form-control" name="Email" id="emailInfo" placeholder="ex: myname@gmail.com" required>
           </div>
           <div class="col-md-6">
-            <label for="phoneNumber" class="form-label">Phone Number</label>
+            <label for="phoneNumber" class="form-label">Phone Number <i class="fa-solid fa-asterisk"></i></label>
             <input type="text" class="form-control" name="Phone&nbsp;Number" id="phoneNumber" placeholder="Enter Your Phone Number" required>
           </div>
           <div class="col-md-6">
             <div class="form-group"> <!-- Date input -->
-              <label class="control-label" for="arrivalDate">Arrival Date - <em>arrival after 16:00</em></label>
-              <input class="form-control" id="arrivalDate" name="Arrival&nbsp;Date" placeholder="DD/MM/YYYY" type="text"/>
+              <label class="control-label" for="arrivalDate">Arrival Date - <em>arrival after 16:00</em> <i class="fa-solid fa-asterisk"></i></label>
+              
+                <div class='input-group date' id='datetimepicker1'>
+                   <input style="padding-left: 2.5em;" type='text' class="form-control" name="Arrival&nbsp;Date" required/>
+  
+                   <span class="input-group-addon">
+                   <span><i style="position: absolute; text-align:left; padding:10px; left: 0;" class="fa-solid fa-calendar"></i></span> 
+                   </span>
+                </div>
+             
             </div>
             </div>
             <div class="col-md-6">
               <div class="form-group"> <!-- Date input -->
-                <label class="control-label" for="departureDate">Departure Date - <em>departure before 10:00</em></label>
-                <input class="form-control" id="departureDate" name="Departure&nbsp;Date" placeholder="DD/MM/YYYY" type="text"/>
+                <label class="control-label" for="departureDate">Departure Date - <em>departure before 10:00</em> <i class="fa-solid fa-asterisk"></i></label>
+                <div class='input-group date' id='datetimepicker2' name="Departure&nbsp;Date">
+                  <input style="padding-left: 2.5em;" type='text' class="form-control" required/>
+ 
+                  <span class="input-group-addon">
+                  <span><i style="position: absolute; text-align:left; padding:10px; left: 0;" class="fa-solid fa-calendar"></i></span> 
+                  </span>
+               </div>
               </div>
               </div>
           
           <div class="col-md-6">
             <div class="form-group">
-              <label style="margin-bottom: 0.5rem;" for="exampleFormControlSelect1">Number of Adults</label>
-              <select class="form-control" name="Number&nbsp;of&nbsp;Adults" id="exampleFormControlSelect1">
+              <label style="margin-bottom: 0.5rem;" for="exampleFormControlSelect1">Number of Adults <i class="fa-solid fa-asterisk"></i></label>
+              <select class="form-control" name="Number&nbsp;of&nbsp;Adults" id="exampleFormControlSelect1" required>
                 <option>1</option>
                 <option>2</option>
                 <option>3</option>
@@ -126,36 +149,26 @@
             <input type="text" class="form-control" name="Ages&nbsp;of&nbsp;Children" id="childAges" placeholder="Seperate with commas">
           </div>
           <div style="display: flex;" class="col-md-12">
-            <button style="margin: 0 auto;" type="submit" class="btn btn-primary text-center">Submit</button>
+            <button id="submitButton" style="margin: 0 auto;" type="submit" class="btn btn-primary text-center">Submit</button>
           </div>
+
+          <div class="container">
+            <div class="row">
+               <div class='col-sm-6'>
+                  
+               </div>
+               
+            </div>
+         </div>
           
         </form>
     </div>
 
-    <!-- Optional JavaScript; choose one of the two! -->
-
-    <!-- Option 1: Bootstrap Bundle with Popper -->
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
-    <script>
-      $(document).ready(function(){
-        var date_input=$('input[name="date"]'); //our date input has the name "date"
-        var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
-        date_input.datepicker({
-            format: 'mm/dd/yyyy',
-            container: container,
-            todayHighlight: true,
-            autoclose: true,
-        })
-    })
-      </script>
-
-    <!-- Option 2: Separate Popper and Bootstrap JS -->
-    <!--
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
-    -->
+    <script type="text/javascript">
+      $(function () {
+          $('#datetimepicker1').datepicker();
+          $('#datetimepicker2').datepicker();
+      });
+   </script>
   </body>
 </html>
