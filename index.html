@@ -7,13 +7,23 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
 
-    <title>Hello, world!</title>
+<!--  jQuery -->
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+
+<!-- Bootstrap Date-Picker Plugin -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+    <title>Highpoint Reservation Form</title>
   </head>
-  <body>
-
+  <body style="padding-bottom: 60px;">
+    <input type="hidden" name="_subject" value="New Reservation!">
     <div class="container mt-5">
-        <h1>Contact Me!</h1>
+        <h1 class="text-center">Highpoint Reservation Form</h1>
+        <p class="text-center">Please complete the form below.</p>
+        <hr>
         <form class="row g-3" action="https://formsubmit.co/d0700f73e1b56c782cffe519ba1b78d3" method="POST">
           <!-- Honeypot -->
           <input type="text" name="_honey" style="display: none;">
@@ -31,28 +41,116 @@
             <label for="lastName" class="form-label">Last Name</label>
             <input type="text" class="form-control" name="Last&nbsp;Name" id="lastName" required>
           </div>
-          <div class="col-md-8">
+          <hr>
+          <div class="col-md-12 ">
+            <label for="lastName" class="form-label"><strong>Address</strong></label>
+            <input type="text" class="form-control" name="address" id="address" required>
+          </div>
+          <div class="col-md-6">
+            <label for="lastName" class="form-label">Street Address</label>
+            <input type="text" class="form-control" name="street address" id="streetAddress" >
+          </div>
+          <div class="col-md-6">
+            <label for="lastName" class="form-label">City</label>
+            <input type="text" class="form-control" name="city" id="city" >
+          </div>
+          <div class="col-md-6">
+            <label for="lastName" class="form-label">County</label>
+            <input type="text" class="form-control" name="county" id="county" >
+          </div>
+          <div class="col-md-6">
+            <label for="lastName" class="form-label">Post Code</label>
+            <input type="text" class="form-control" name="postcode" id="postcode" required>
+          </div>
+          <div class="col-md-6">
             <label for="emailInfo" class="form-label">E-mail</label>
-            <input type="email" class="form-control" name="email" id="emailInfo" required>
+            <input type="email" class="form-control" name="email" id="emailInfo" placeholder="ex: myname@gmail.com" required>
           </div>
-          <div class="col-md-4">
+          <div class="col-md-6">
             <label for="phoneNumber" class="form-label">Phone Number</label>
-            <input type="text" class="form-control" name="phone" id="phoneNumber" placeholder="Enter Your Phone Number">
+            <input type="text" class="form-control" name="phone" id="phoneNumber" placeholder="Enter Your Phone Number" required>
           </div>
-          <div class="col-md-12">
-            <label for="comments" class="form-label">Comments, questions?</label>
-            <textarea class="form-control" id="comments" name="comments,&nbsp;questions" rows="3" required></textarea>
+          <div class="col-md-6">
+            <div class="form-group"> <!-- Date input -->
+              <label class="control-label" for="arrivalDate">Arrival Date - <em>arrival after 16:00</em></label>
+              <input class="form-control" id="arrivalDate" name="arrival date" placeholder="DD/MM/YYYY" type="text"/>
+            </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group"> <!-- Date input -->
+                <label class="control-label" for="departureDate">Departure Date - <em>departure before 10:00</em></label>
+                <input class="form-control" id="departureDate" name="departure date" placeholder="DD/MM/YYYY" type="text"/>
+              </div>
+              </div>
+          
+          <div class="col-md-6">
+            <div class="form-group">
+              <label style="margin-bottom: 0.5rem;" for="exampleFormControlSelect1">Number of Adults</label>
+              <select class="form-control" name="number of adults" id="exampleFormControlSelect1">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+              </select>
+            </div>
           </div>
-          <div class="col-md-12">
-            <button type="submit" class="btn btn-primary">Submit</button>
+          <div class="col-md-6">
+            <label for="phoneNumber" class="form-label">Names of Guests</label>
+            <input type="text" class="form-control" name="names of guests" id="phoneNumber" placeholder="Seperate with commas">
           </div>
+          <div class="col-md-6">
+            <div class="form-group">
+              <label style="margin-bottom: 0.5rem;" for="exampleFormControlSelect2">Number of Children</label>
+              <select class="form-control" name="number of children" id="exampleFormControlSelect2">
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+              </select>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <label for="childAges" class="form-label">Ages of Children</label>
+            <input type="text" class="form-control" name="ages of children" id="childAges" placeholder="">
+          </div>
+          <div style="display: flex;" class="col-md-12">
+            <button style="margin: 0 auto;" type="submit" class="btn btn-primary text-center">Submit</button>
+          </div>
+          
         </form>
     </div>
 
     <!-- Optional JavaScript; choose one of the two! -->
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <script>
+      $(document).ready(function(){
+        var date_input=$('input[name="date"]'); //our date input has the name "date"
+        var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+        date_input.datepicker({
+            format: 'mm/dd/yyyy',
+            container: container,
+            todayHighlight: true,
+            autoclose: true,
+        })
+    })
+      </script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
     <!--
