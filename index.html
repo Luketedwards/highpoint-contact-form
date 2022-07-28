@@ -166,8 +166,12 @@
 
     <script type="text/javascript">
       $(function () {
-          $('#datetimepicker1').datepicker();
-          $('#datetimepicker2').datepicker();
+          $('#datetimepicker1').datepicker({
+            format: "dd-mm-yyyy",
+          });
+          $('#datetimepicker2').datepicker({
+            format: "dd-mm-yyyy",
+          });
       });
    </script>
   </body>
